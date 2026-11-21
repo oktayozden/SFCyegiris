@@ -84,7 +84,7 @@ Kod, simülasyondan sonra üç koşulu her dönem için hesaplar:
 | (C2) | Sektörlerin net finansal servetinin toplamı sıfırdır. |
 | (C3) | Her sektörün net finansal serveti, tam olarak net borç vermesi kadar değişir. |
 
-Ekrana yazılan değerler bu koşullardan en büyük sapmayı göstermektedir ve sıfıra çok yakın olmalıdır (örn. 10⁻¹⁰ mertebesinde). Koşullardan biri sağlanmazsa kod "Model stok-akım tutarlı DEĞİL!" mesajıyla durur.
+Ekrana yazılan değerler bu koşullardan en büyük sapmayı göstermektedir ve sıfıra çok yakın olmalıdır (örn. 10⁻¹⁰ mertebesinde). Koşullardan biri sağlanmazsa kod "Model stok-akım tutarlı DEĞİL! Bir sızıntı var!" mesajıyla durarak modelci uyarılır.
 
 Bu sınama, modeli değiştirirken en önemli yardımcınız olacaktır: bir denklem eklediğinizde ya da değiştirdiğinizde bir ödemenin karşılığını unutursanız kod bunu size söyler.
 
@@ -131,6 +131,7 @@ Kodlar MIT lisansı ile paylaşılmaktadır: kaynak göstererek serbestçe kulla
 
 ## İletişim
 
-Oktay Özden (oktay.ozdn@gmail.com)
+Oktay Özden 
+oktay.ozdn@gmail.com
 İstanbul Bilgi Üniversitesi
 www.oktayozden.com
