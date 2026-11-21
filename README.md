@@ -1,8 +1,8 @@
 # İki Hanehalklı Stok-Akım Tutarlı (SFC) Bir Giriş Modeli
 
-Bu depo, stok-akım tutarlı (SFC) modellemeye yeni başlayanlar için hazırlanmış küçük bir giriş modelinin R kodlarını içerir. Model, Godley ve Lavoie'nın (2007) en basit modeli SIM'in bir adım ötesine geçmekte: hanehalkını işçiler ve rantiyeler olarak ikiye ayırıp, bankaları, krediyle finanse edilen yatırımı ve ücret-kâr ayrımını eklemektedir.
+Bu depo, stok-akım tutarlı (SFC) modellemeye yeni başlayanlar için hazırlanmış küçük bir giriş modelinin R kodlarını içermektedir. Model, Godley ve Lavoie'nın (2007) en basit modeli SIM'in bir adım ötesine geçmektedir. Model hanehalkını işçiler ve rantiyeler olarak ikiye ayırıp, bankaları, krediyle finanse edilen yatırımı ve ücret-kâr ayrımını eklemektedir.
 
-Kodlar bilerek olabildiğince sade yazılmıştır: her değişken düz bir vektördür, model tek bir döngüdür ve her denklem makaledeki numarasıyla etiketlenmiştir.
+Kodlar bilinçli olarak olabildiğince sade yazılmıştır: her değişken düz bir vektördür, model tek bir döngüdür ve her denklem makaledeki numarasıyla etiketlenmiştir.
 
 ## Dosyalar
 
