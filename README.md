@@ -1,6 +1,6 @@
 # İki Hanehalklı Stok-Akım Tutarlı (SFC) Bir Giriş Modeli
 
-Bu depo, stok-akım tutarlı (SFC) modellemeye yeni başlayanlar için hazırlanmış küçük bir giriş modelinin R kodlarını içerir. Model, Godley ve Lavoie'nın (2007) en basit modeli SIM'in bir adım ötesine geçer: hanehalkını işçiler ve rantiyeler olarak ikiye ayırır, bankaları, krediyle finanse edilen yatırımı ve ücret-kâr ayrımını ekler.
+Bu depo, stok-akım tutarlı (SFC) modellemeye yeni başlayanlar için hazırlanmış küçük bir giriş modelinin R kodlarını içerir. Model, Godley ve Lavoie'nın (2007) en basit modeli SIM'in bir adım ötesine geçmekte: hanehalkını işçiler ve rantiyeler olarak ikiye ayırıp, bankaları, krediyle finanse edilen yatırımı ve ücret-kâr ayrımını eklemektedir.
 
 Kodlar bilerek olabildiğince sade yazılmıştır: her değişken düz bir vektördür, model tek bir döngüdür ve her denklem makaledeki numarasıyla etiketlenmiştir.
 
@@ -15,7 +15,7 @@ Kodlar bilerek olabildiğince sade yazılmıştır: her değişken düz bir vekt
 
 ## Modelin yapısı
 
-Altı sektör vardır: işçiler, rantiyeler, firmalar, bankalar, merkez bankası ve devlet. Dış dünya yoktur.
+Model altı sektör içermektedir: işçiler, rantiyeler, firmalar, bankalar, merkez bankası ve devlet. Dış dünya yoktur.
 
 - İşçiler ücret geliri elde eder, tüketici kredisi faizi öder ve harcanabilir gelirlerinin tamamını tüketir.
 - Rantiyeler ücret, faiz ve temettü geliri elde eder; gelirlerinin ve servetlerinin bir kısmını tüketir, tasarruflarını mevduat ve devlet tahvili olarak tutar.
@@ -42,10 +42,10 @@ source("model_2h.R", encoding = "UTF-8")
 
 `scenario` atanmazsa kod 0 numaralı senaryoyu (şok yok) çalıştırır. Bütün şoklar 10. dönemde başlar ve kalıcıdır.
 
-Kod çalışınca iki şey yapar:
+Kod çalışınca iki şey yapmaktadır:
 
-1. Stok-akım tutarlılığı sınamalarının sonucunu ekrana yazdırır.
-2. Dokuz panelli, etkileşimli bir şekil çizer.
+1. Stok-akım tutarlılığı sınamalarının sonucunu ekrana çıktı olarak yazdırır.
+2. Dokuz panelli, etkileşimli bir panel çizer.
 
 ## Senaryolar
 
@@ -84,9 +84,9 @@ Kod, simülasyondan sonra üç koşulu her dönem için hesaplar:
 | (C2) | Sektörlerin net finansal servetinin toplamı sıfırdır. |
 | (C3) | Her sektörün net finansal serveti, tam olarak net borç vermesi kadar değişir. |
 
-Ekrana yazılan değerler bu koşullardan en büyük sapmayı gösterir ve sıfıra çok yakın olmalıdır (10⁻¹⁰ mertebesinde). Koşullardan biri sağlanmazsa kod "Model stok-akım tutarlı DEĞİL!" mesajıyla durur.
+Ekrana yazılan değerler bu koşullardan en büyük sapmayı göstermektedir ve sıfıra çok yakın olmalıdır (örn. 10⁻¹⁰ mertebesinde). Koşullardan biri sağlanmazsa kod "Model stok-akım tutarlı DEĞİL!" mesajıyla durur.
 
-Bu sınama, modeli değiştirirken en önemli yardımcınızdır: bir denklem eklediğinizde ya da değiştirdiğinizde bir ödemenin karşılığını unutursanız kod bunu size söyler.
+Bu sınama, modeli değiştirirken en önemli yardımcınız olacaktır: bir denklem eklediğinizde ya da değiştirdiğinizde bir ödemenin karşılığını unutursanız kod bunu size söyler.
 
 ## Kodun yapısı
 
@@ -111,13 +111,13 @@ Dönem sayısı dosyanın başındaki `T` ile belirlenir (varsayılan değer 100
 
 Modelin ayrıntılı anlatımı, denklemleri, bilanço ve işlem akış matrisleri ile deneylerin yorumu şu çalışmadadır:
 
-> Özden, Oktay. "İki Hanehalklı Stok-Akım Tutarlı (SFC) Bir Giriş Modeli." (yayın bilgisi eklenecek)
+> Özden, Oktay. "İki Hanehalklı Stok-Akım Tutarlı (SFC) Bir Giriş Modeli." (2027, yayın aşamasında)
 
-Model, yazarın doktora tezinin 4. bölümünde geliştirilen modele dayanmaktadır:
+Model, doktora tezimin 4. bölümünde geliştirilen modele dayanmaktadır:
 
 > Özden, Oktay. 2025. "Inequality, Post-COVID Inflation and Incomes Policy in a Two Household SFC Model for the UK Economy." Doktora tezi, Kadir Has Üniversitesi, İstanbul.
 
-Modelin Birleşik Krallık ekonomisine uygulanmış ampirik sürümü:
+Modelin Birleşik Krallık ekonomisine uygulanmış genişletilmiş ampirik sürümü:
 
 > Özden, Oktay, ve Alp Erinç Yeldan. 2026. "A Two-Household Stock-Flow Consistent Model of the UK Economy: Distributional Consequences of Orthodox Disinflationary Policy and Alternatives." *Review of Political Economy*. https://doi.org/10.1080/09538259.2026.2691595
 
@@ -131,4 +131,6 @@ Kodlar MIT lisansı ile paylaşılmaktadır: kaynak göstererek serbestçe kulla
 
 ## İletişim
 
-Oktay Özden (iletişim bilgisi eklenecek)
+Oktay Özden (oktay.ozdn@gmail.com)
+İstanbul Bilgi Üniversitesi
+www.oktayozden.com
