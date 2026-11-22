@@ -2,7 +2,9 @@
 
 Bu depo, stok-akım tutarlı (SFC) modellemeye yeni başlayanlar için hazırlanmış küçük bir giriş modelinin R kodlarını içerir. Model, Godley ve Lavoie'nın (2007) en basit modeli SIM'in bir adım ötesine geçer: hanehalkını işçiler ve rantiyeler olarak ikiye ayırır, bankaları, krediyle finanse edilen yatırımı ve ücret-kâr ayrımını ekler.
 
-Bu belge, daha önce hiç R kullanmamış birinin modeli adım adım çalıştırabilmesi için yazılmıştır. Sırayla izlemeniz yeterlidir.
+Model ..... dergisinde yayınlanmıştır. Kodu çalıştırmadan önce makalenin dikkatli bir şekilde okunup anlaşılması önerilir.
+
+Bu belge, daha önce hiç R kullanmamış birinin modeli adım adım çalıştırabilmesi için hazırlanmıştır. Sırayla izlemeniz yeterlidir.
 
 | Dosya | İçerik |
 |---|---|
@@ -18,7 +20,7 @@ Bu belge, daha önce hiç R kullanmamış birinin modeli adım adım çalıştı
 1. Önce R'ı indirip kurun: <https://cran.r-project.org>
 2. Sonra Positron'u indirip kurun: <https://positron.posit.co/download>
 
-R hesaplamayı yapan programdır; Positron ise R'ı rahat kullanmanızı sağlayan arayüzdür. Positron R'ı kendisi kurmaz, bu yüzden sırayı izleyin: önce R, sonra Positron. Bundan sonra hep Positron'u açacaksınız.
+R hesaplamayı yapan programdır; Positron ise R'ı rahat kullanmanızı sağlayan arayüzdür. Positron R'ı kendisi kurmaz, bu yüzden sırayı dikkatlice takip edin: önce R, sonra Positron. Bundan sonra hep Positron'u açacaksınız.
 
 RStudio kullanıyorsanız aynı adımları orada da izleyebilirsiniz; yalnızca menü adları biraz farklıdır.
 
@@ -32,12 +34,12 @@ Artık masaüstünüzde, içinde `model_2h.R` ve `model_2h_cc.R` dosyaları bulu
 
 ## Adım 2. Positron'u açın ve klasörü tanımlayın
 
-R'a dosyaların nerede olduğunu söylemeniz gerekir. Buna "çalışma klasörü" (working directory) denir. Positron'da bir klasörü açtığınızda çalışma klasörü kendiliğinden o klasör olur.
+R'a dosyaların nerede olduğunu söylemeniz gerekecektir. Bu işleme "çalışma klasörü" (working directory) tanımla adı verilir. Positron'da bir klasörü açtığınızda çalışma klasörü kendiliğinden o klasör olur.
 
 1. Positron'u açın.
 2. Üst menüden **File → Open Folder...** yolunu izleyin.
-3. Masaüstündeki `SFCyegiris` klasörünü seçin ve onaylayın. "Bu klasördeki dosyaların yazarlarına güveniyor musunuz?" diye bir soru çıkarsa **Yes, I trust the authors** seçeneğine tıklayın.
-4. Sol taraftaki dosya listesinde `model_2h.R` ve `model_2h_cc.R` dosyalarını görmelisiniz.
+3. Masaüstündeki `SFCyegiris` klasörünü seçin ve onaylayın. "Bu klasördeki dosyaların yazarlarına güveniyor musunuz?" diye bir soru çıkarsa **Yes, I trust the authors** seçeneğine tıklayın; korkmayınız dosya herhangi bir zararlı yazılım içermiyor :))
+4. Sol taraftaki dosya listesinde `model_2h.R` ve `model_2h_cc.R` dosyalarını görüyor olmalısınız.
 5. Alttaki **Console** penceresinde R'ın başladığını (bir `>` işareti) görmelisiniz. Görmüyorsanız sağ üst köşedeki oturum seçicisinden R'ı seçin.
 
 Doğru yapıp yapmadığınızı sınamak için alttaki **Console** penceresine şunu yazıp Enter'a basın:
@@ -48,7 +50,7 @@ list.files()
 
 Çıktıda `model_2h.R` ve `model_2h_cc.R` adlarını görüyorsanız çalışma klasörü doğrudur.
 
-## Adım 3. Şekiller için gereken paketi kurun (yalnızca bir kez)
+## Adım 3. Şekiller için gereken paketi kurun (yalnızca bir defa)
 
 Console penceresine şunu yazıp Enter'a basın ve kurulumun bitmesini bekleyin:
 
@@ -83,7 +85,7 @@ Senaryo 0
 (C3) stok-akım bağı, en büyük fark             : ...
 ```
 
-Üç noktaların yerinde sıfıra çok yakın sayılar (örneğin `1e-10` ya da daha küçük) görünür. Bu, modelin muhasebesinin tuttuğu, yani hiçbir paranın yoktan var olmadığı ve kaybolmadığı anlamına gelir.
+Üç noktaların yerinde sıfıra çok yakın sayılar (örneğin `1e-10` ya da daha küçük) görünür. Bu, modelin muhasebesinin tuttuğu, yani hiçbir paranın yoktan var olmadığı ve kaybolmadığı anlamına gelir. Yani herhangi bir sızıntı yoktur.
 
 - Sağ taraftaki **Plots** (ya da **Viewer**) penceresinde dokuz panelli bir şekil. Fareyi çizgilerin üzerine getirdiğinizde değerleri okuyabilirsiniz.
 
@@ -142,7 +144,7 @@ if (scenario == 4) { tau.r[s] <- 0.25 ; G.wel[s] <- 14.8 + 18.4 }
 
 Her satır bir senaryodur ve şöyle okunur: "senaryo 1 seçildiyse, kamu harcamasını 10. dönemden itibaren 160 yap".
 
-3. Şokun boyutunu değiştirmek için satırın sonundaki sayıyı değiştirin. Örneğin kamu harcamasının 160 yerine 170'e çıkmasını istiyorsanız:
+3. Şokun boyutunu değiştirmek için satırın sonundaki sayıyı değiştirin. Örneğin kamu harcamasının 160 yerine 170'e çıkmasını istiyorsanız ilgili satırdaki değeri aşağıdaki gibi 170 yapabilirsiniz:
 
 ```r
 if (scenario == 1) G.exp[s] <- 170
@@ -257,4 +259,5 @@ Kodlar MIT lisansı ile paylaşılmaktadır: kaynak göstererek serbestçe kulla
 
 ## İletişim
 
-Oktay Özden (iletişim bilgisi eklenecek)
+Oktay Özden
+www.oktayozden.com
